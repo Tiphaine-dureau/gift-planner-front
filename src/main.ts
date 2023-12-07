@@ -1,12 +1,30 @@
 import './assets/main.css'
+import 'material-design-icons-iconfont/dist/material-design-icons.css'
 
 import { createApp } from 'vue'
 import App from './App.vue'
 import router from './router'
 import './assets/tailwind.css'
 
-const app = createApp(App)
+import 'vuetify/styles'
+import { createVuetify } from 'vuetify'
+import * as components from 'vuetify/components'
+import * as directives from 'vuetify/directives'
+import { aliases, md } from 'vuetify/iconsets/md'
 
-app.use(router)
+const vuetify = createVuetify({
+  theme: {
+    defaultTheme: 'dark'
+  },
+  icons: {
+    defaultSet: 'md',
+    aliases,
+    sets: {
+      md
+    }
+  },
+  components,
+  directives
+})
 
-app.mount('#app')
+createApp(App).use(vuetify).use(router).mount('#app')
