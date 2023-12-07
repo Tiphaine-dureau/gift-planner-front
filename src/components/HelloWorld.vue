@@ -15,6 +15,9 @@ defineProps<{
   </div>
 
   <div class="text-3xl text-red-600">Hello Tailwind</div>
+
+  <v-btn color="secondary" class="m-10">Hello Vuetify</v-btn>
+
 </template>
 
 <style scoped>
